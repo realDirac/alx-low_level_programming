@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-/* *
+/**
  * main - Entry point
- *
+ *This c script prints the sizes of the various data types
  *Return: Always 0 (Success)
  */
 int main(void)
