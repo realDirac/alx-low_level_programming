@@ -1,24 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
+#define PASSWORD_LENGTH 6
 /**
  * main - generates keygen.
  * Return: 0 Always.
  */
 int main(void)
 {
-	int r = 0, c = 0;
-	time_t t;
+	char password[PASSWORD_LENGTH + 1'];
+	int i;
+	srand(time(NULL));
 
-	srand((unsigned int) time(&t));
-	while (c < 2772)
+	for (i=0; i<PASSWORD_LENGTH; i++)
 	{
-		r = rand() % 128;
-		if ((c + r) > 2772)
-			break;
-		c = c + r;
-		printf("%c", r);
+		password[i] = rand() % 94 + 33;
 	}
-	printf("%c\n", (2772 - c));
+
+	password[PASSWORD_LENGTH] = '\0';
+
+	printf("%s\n", password);
+
 	return (0);
 }
