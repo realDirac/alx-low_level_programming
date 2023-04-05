@@ -6,24 +6,27 @@ int is_palindrome(char *s);
 
 /**
  * is_palindrome - function that works on string
+ * check_palindrome - function checking palindrome
+ * @start: start
+ * @end: end
  * @s: The string to be measured.
  * Return: The length of the string.
  */
+int check_palindrome(char *s, int start, int end)
+{
+	if (start >= end)
+		return (1);
+	if (s[start] != s[end])
+		return (0);
+	return (check_palindrome(s, start + 1, end - 1));
+}
 
 int is_palindrome(char *s)
 {
 	int len = 0;
-	int i = 0;
 
-	while (s[len] != '\10')
+	while (s[len] != '\0')
 		len++;
 
-	while (i < len / 2)
-	{
-		if (s[i] != s[len - i - 1])
-			return (0);
-		i++;
-	}
-
-	return (1);
+	return (check_palindrome(s, 0, len - 1));
 }
