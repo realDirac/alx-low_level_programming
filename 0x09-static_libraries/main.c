@@ -1,13 +1,7 @@
 #include "main.h"
-#include <unistd.h>
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
+
+int main(void)
 {
-        return (write(1, &c, 1));
+	_puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Hevin Mitnick");
+	return (0);
 }
